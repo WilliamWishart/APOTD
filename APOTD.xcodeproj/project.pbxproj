@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3D39D8641F92AB4500A2C6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D8631F92AB4500A2C6AA /* AppDelegate.swift */; };
-		3D39D8661F92AB4500A2C6AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D8651F92AB4500A2C6AA /* ViewController.swift */; };
-		3D39D8691F92AB4500A2C6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D39D8671F92AB4500A2C6AA /* Main.storyboard */; };
 		3D39D86B1F92AB4500A2C6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D39D86A1F92AB4500A2C6AA /* Assets.xcassets */; };
-		3D39D86E1F92AB4500A2C6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D39D86C1F92AB4500A2C6AA /* LaunchScreen.storyboard */; };
 		3D39D8791F92AB4600A2C6AA /* APOTDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D8781F92AB4600A2C6AA /* APOTDTests.swift */; };
 		3D39D8841F92AB4600A2C6AA /* APOTDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D8831F92AB4600A2C6AA /* APOTDUITests.swift */; };
+		3D39D8971F92ADEA00A2C6AA /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D8951F92ADEA00A2C6AA /* PictureViewController.swift */; };
+		3D39D8981F92ADEA00A2C6AA /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D39D8961F92ADEA00A2C6AA /* PictureViewController.xib */; };
+		3D39D89B1F92AF0C00A2C6AA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89A1F92AF0C00A2C6AA /* AppCoordinator.swift */; };
+		3D39D89D1F92AF7F00A2C6AA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89C1F92AF7F00A2C6AA /* RootViewController.swift */; };
+		3D39D89F1F92AFAB00A2C6AA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */; };
+		3D88FA251F93FD18005D6D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D88FA241F93FD18005D6D3E /* LaunchScreen.storyboard */; };
+		3D88FA281F941FAC005D6D3E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88FA271F941FAC005D6D3E /* ViewControllerFactory.swift */; };
+		3D88FA2B1F968171005D6D3E /* APOTDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88FA2A1F968171005D6D3E /* APOTDService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +41,7 @@
 /* Begin PBXFileReference section */
 		3D39D8601F92AB4500A2C6AA /* APOTD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOTD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D39D8631F92AB4500A2C6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D39D8651F92AB4500A2C6AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D39D8681F92AB4500A2C6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D39D86A1F92AB4500A2C6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3D39D86D1F92AB4500A2C6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D39D86F1F92AB4500A2C6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D39D8741F92AB4600A2C6AA /* APOTDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APOTDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D39D8781F92AB4600A2C6AA /* APOTDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOTDTests.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 		3D39D87F1F92AB4600A2C6AA /* APOTDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APOTDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D39D8831F92AB4600A2C6AA /* APOTDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOTDUITests.swift; sourceTree = "<group>"; };
 		3D39D8851F92AB4600A2C6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D39D8951F92ADEA00A2C6AA /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		3D39D8961F92ADEA00A2C6AA /* PictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
+		3D39D89A1F92AF0C00A2C6AA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3D39D89C1F92AF7F00A2C6AA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3D88FA241F93FD18005D6D3E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D88FA271F941FAC005D6D3E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		3D88FA2A1F968171005D6D3E /* APOTDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOTDService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +107,11 @@
 		3D39D8621F92AB4500A2C6AA /* APOTD */ = {
 			isa = PBXGroup;
 			children = (
+				3D88FA261F941E89005D6D3E /* Services */,
+				3D39D8991F92AE2300A2C6AA /* Coordinators */,
+				3D39D8921F92ACB700A2C6AA /* Views */,
 				3D39D8631F92AB4500A2C6AA /* AppDelegate.swift */,
-				3D39D8651F92AB4500A2C6AA /* ViewController.swift */,
-				3D39D8671F92AB4500A2C6AA /* Main.storyboard */,
 				3D39D86A1F92AB4500A2C6AA /* Assets.xcassets */,
-				3D39D86C1F92AB4500A2C6AA /* LaunchScreen.storyboard */,
 				3D39D86F1F92AB4500A2C6AA /* Info.plist */,
 			);
 			path = APOTD;
@@ -125,6 +135,35 @@
 			path = APOTDUITests;
 			sourceTree = "<group>";
 		};
+		3D39D8921F92ACB700A2C6AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D39D8951F92ADEA00A2C6AA /* PictureViewController.swift */,
+				3D39D8961F92ADEA00A2C6AA /* PictureViewController.xib */,
+				3D88FA241F93FD18005D6D3E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D39D8991F92AE2300A2C6AA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3D39D89A1F92AF0C00A2C6AA /* AppCoordinator.swift */,
+				3D39D89C1F92AF7F00A2C6AA /* RootViewController.swift */,
+				3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3D88FA261F941E89005D6D3E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3D88FA271F941FAC005D6D3E /* ViewControllerFactory.swift */,
+				3D88FA2A1F968171005D6D3E /* APOTDService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +173,7 @@
 			buildPhases = (
 				3D39D85C1F92AB4500A2C6AA /* Sources */,
 				3D39D85D1F92AB4500A2C6AA /* Frameworks */,
+				3D88FA291F9631FB005D6D3E /* ShellScript */,
 				3D39D85E1F92AB4500A2C6AA /* Resources */,
 			);
 			buildRules = (
@@ -232,9 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D39D86E1F92AB4500A2C6AA /* LaunchScreen.storyboard in Resources */,
+				3D88FA251F93FD18005D6D3E /* LaunchScreen.storyboard in Resources */,
+				3D39D8981F92ADEA00A2C6AA /* PictureViewController.xib in Resources */,
 				3D39D86B1F92AB4500A2C6AA /* Assets.xcassets in Resources */,
-				3D39D8691F92AB4500A2C6AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +294,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D88FA291F9631FB005D6D3E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   Increment build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"Version: $versionNumber Build: $buildNumber\\\"/\" $PROJECT_DIR/APOTD/Views/LaunchScreen.storyboard";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D39D85C1F92AB4500A2C6AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D39D8661F92AB4500A2C6AA /* ViewController.swift in Sources */,
+				3D39D89D1F92AF7F00A2C6AA /* RootViewController.swift in Sources */,
+				3D88FA2B1F968171005D6D3E /* APOTDService.swift in Sources */,
+				3D39D89B1F92AF0C00A2C6AA /* AppCoordinator.swift in Sources */,
+				3D39D89F1F92AFAB00A2C6AA /* Coordinator.swift in Sources */,
+				3D88FA281F941FAC005D6D3E /* ViewControllerFactory.swift in Sources */,
+				3D39D8971F92ADEA00A2C6AA /* PictureViewController.swift in Sources */,
 				3D39D8641F92AB4500A2C6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,25 +355,6 @@
 			targetProxy = 3D39D8801F92AB4600A2C6AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3D39D8671F92AB4500A2C6AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D39D8681F92AB4500A2C6AA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3D39D86C1F92AB4500A2C6AA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D39D86D1F92AB4500A2C6AA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3D39D8861F92AB4600A2C6AA /* Debug */ = {
