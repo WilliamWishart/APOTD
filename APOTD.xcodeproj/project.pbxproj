@@ -16,6 +16,8 @@
 		3D39D89B1F92AF0C00A2C6AA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89A1F92AF0C00A2C6AA /* AppCoordinator.swift */; };
 		3D39D89D1F92AF7F00A2C6AA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89C1F92AF7F00A2C6AA /* RootViewController.swift */; };
 		3D39D89F1F92AFAB00A2C6AA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */; };
+		3D45FC981F994A5C00F4FCAA /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45FC971F994A5C00F4FCAA /* PictureViewModel.swift */; };
+		3D45FC9B1F9B698300F4FCAA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45FC9A1F9B698300F4FCAA /* UIImageViewExtension.swift */; };
 		3D88FA251F93FD18005D6D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D88FA241F93FD18005D6D3E /* LaunchScreen.storyboard */; };
 		3D88FA281F941FAC005D6D3E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88FA271F941FAC005D6D3E /* ViewControllerFactory.swift */; };
 		3D88FA2B1F968171005D6D3E /* APOTDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D88FA2A1F968171005D6D3E /* APOTDService.swift */; };
@@ -54,6 +56,8 @@
 		3D39D89A1F92AF0C00A2C6AA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3D39D89C1F92AF7F00A2C6AA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3D45FC971F994A5C00F4FCAA /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
+		3D45FC9A1F9B698300F4FCAA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		3D88FA241F93FD18005D6D3E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D88FA271F941FAC005D6D3E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		3D88FA2A1F968171005D6D3E /* APOTDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOTDService.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		3D39D8621F92AB4500A2C6AA /* APOTD */ = {
 			isa = PBXGroup;
 			children = (
+				3D45FC991F9B694400F4FCAA /* Infrastructure */,
+				3D45FC961F994A4000F4FCAA /* ViewModels */,
 				3D88FA261F941E89005D6D3E /* Services */,
 				3D39D8991F92AE2300A2C6AA /* Coordinators */,
 				3D39D8921F92ACB700A2C6AA /* Views */,
@@ -153,6 +159,22 @@
 				3D39D89E1F92AFAB00A2C6AA /* Coordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3D45FC961F994A4000F4FCAA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D45FC971F994A5C00F4FCAA /* PictureViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D45FC991F9B694400F4FCAA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3D45FC9A1F9B698300F4FCAA /* UIImageViewExtension.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		3D88FA261F941E89005D6D3E /* Services */ = {
@@ -306,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   Increment build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"Version: $versionNumber Build: $buildNumber\\\"/\" $PROJECT_DIR/APOTD/Views/LaunchScreen.storyboard";
+			shellScript = "# From: https://stackoverflow.com/questions/33583621/show-version-of-app-in-launch-screen-with-swift\n\n#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   Increment build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"Version: $versionNumber Build: $buildNumber\\\"/\" $PROJECT_DIR/APOTD/Views/LaunchScreen.storyboard";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -316,9 +338,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D39D89D1F92AF7F00A2C6AA /* RootViewController.swift in Sources */,
+				3D45FC981F994A5C00F4FCAA /* PictureViewModel.swift in Sources */,
 				3D88FA2B1F968171005D6D3E /* APOTDService.swift in Sources */,
 				3D39D89B1F92AF0C00A2C6AA /* AppCoordinator.swift in Sources */,
 				3D39D89F1F92AFAB00A2C6AA /* Coordinator.swift in Sources */,
+				3D45FC9B1F9B698300F4FCAA /* UIImageViewExtension.swift in Sources */,
 				3D88FA281F941FAC005D6D3E /* ViewControllerFactory.swift in Sources */,
 				3D39D8971F92ADEA00A2C6AA /* PictureViewController.swift in Sources */,
 				3D39D8641F92AB4500A2C6AA /* AppDelegate.swift in Sources */,

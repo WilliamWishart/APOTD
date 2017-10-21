@@ -23,9 +23,13 @@ public class ViewControllerFactory: FactoryProtocol
 }
 
 public extension ViewControllerFactory {
+    
     public func createPictureViewController() -> UIViewController
     {
         print("ViewControllerFactory.createPictureViewController, called")
-        return PictureViewController();
+        return PictureViewController(apotd: apotdService);
     }
+    
 }
+
+

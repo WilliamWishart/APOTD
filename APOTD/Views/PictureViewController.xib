@@ -5,12 +5,17 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureViewController" customModule="APOTD" customModuleProvider="target">
             <connections>
+                <outlet property="pictureOfTheDayImage" destination="5Ow-Mf-Qjd" id="5Cb-ho-yoo"/>
+                <outlet property="pictureOfTheDayText" destination="hCZ-xP-6uT" id="mRa-BA-Nue"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +24,43 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APOTD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-kn-ql2">
-                    <rect key="frame" x="159" y="333" width="57" height="21"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FvB-2A-oqp">
+                    <rect key="frame" x="16" y="49" width="343" height="249.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Mf-Qjd">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="249.5"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture of the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-KE-Nl6">
+                    <rect key="frame" x="16" y="20" width="137" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hCZ-xP-6uT">
+                    <rect key="frame" x="16" y="319.5" width="343" height="327.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="zd2-kn-ql2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="50l-lA-rsG"/>
-                <constraint firstItem="zd2-kn-ql2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gzs-ik-PIr"/>
+                <constraint firstItem="FvB-2A-oqp" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="4Jn-Qb-lMa"/>
+                <constraint firstItem="asJ-KE-Nl6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="A9S-fF-VdG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hCZ-xP-6uT" secondAttribute="trailing" constant="16" id="T8C-tJ-S0P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hCZ-xP-6uT" secondAttribute="bottom" constant="20" id="f4j-IH-Te9"/>
+                <constraint firstItem="FvB-2A-oqp" firstAttribute="top" secondItem="asJ-KE-Nl6" secondAttribute="bottom" constant="8" symbolic="YES" id="iOW-GY-Z1n"/>
+                <constraint firstItem="hCZ-xP-6uT" firstAttribute="firstBaseline" secondItem="5Ow-Mf-Qjd" secondAttribute="baseline" constant="21" symbolType="layoutAnchor" id="jHA-44-3iS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FvB-2A-oqp" secondAttribute="bottom" constant="369" id="mfW-9o-a0t"/>
+                <constraint firstItem="hCZ-xP-6uT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oIa-zo-zd9"/>
+                <constraint firstItem="FvB-2A-oqp" firstAttribute="leading" secondItem="asJ-KE-Nl6" secondAttribute="leading" id="xGd-Di-2Vb"/>
+                <constraint firstItem="asJ-KE-Nl6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z8z-xU-YDh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
 </document>
