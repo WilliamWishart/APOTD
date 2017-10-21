@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/// The PictureViewModel reflects the JSON data structure
+/// provided by the Astronomy Picture of the Day
+/// https://api.nasa.gov/api.html#apod
 public struct PictureViewModel: Codable {
     let copyright: String
     let date: String
